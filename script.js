@@ -4,7 +4,7 @@
 	* pour commencer j'appel mon élement html dans le DOM et 
 	l'assigné a une variable 
 	*/
-
+	 
   
 const container = document.getElementById('citations-container');
 /**
@@ -13,30 +13,39 @@ const container = document.getElementById('citations-container');
  * dans le DOM avec la methode createlement(), je crée un nouveau élement div qui va contenir ma 
  * quotes (citation),et lui donner une classe.
  */
-for (const auteur in quotes) {
+const quoteId = 1;
 
+for (const  quote of quotes) {
 
 	const citationBox = document.createElement('div');
 	citationBox.className = 'citation-box';
-	console.log(citationBox)
+	citationBox.id =`quote : ${quoteId}`;
+	 
 	/**
-	 * je pareil pour le paragraphe et le titre qui contiendra 
-	 * le nom de l'auteur
+	 * ici j'ai déclarer des variables qui vont contenir les 
+	 * éléments crées et affécter le contenu dans la balise html
+	 * 
 	 */
 
 	const quoteText = document.createElement('p');
 	quoteText.className = 'paragraphe';
-	quoteText.textContent = `"${quotes[auteur]}"`;
+	quoteText.textContent = `"${quote.content}"`;
 	
 	const autorName = document.createElement('h2');
 	autorName.className = 'autor';
-	autorName.textContent = auteur;
+	autorName.textContent = quote.author;
+
+	const title = document.createElement('h3');
+	title.className = 'title';
+	title.textContent = `"${quote.title}"`;
 	/**
 	 * avec la methode appenchild je rajoute dynamiquement les élement crées 
 	 * au fichier html, 
 	 */
-
+	
 	citationBox.appendChild(quoteText);
 	citationBox.appendChild(autorName);
+	citationBox.appendChild(title);
 	container.appendChild(citationBox);
+	 
 }

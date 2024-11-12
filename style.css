@@ -17,6 +17,15 @@ body {
 	max-width: 800px;
 	margin-top: 20px;
 }
+.title{
+	font-size: 15px;
+	color: rgb(91, 95, 95);
+	text-align: left;
+	font-style: italic;
+	 
+
+}
+
 
 .citation-box {
 	background-color: #fff;
